@@ -1,0 +1,57 @@
+body{
+    background-color: black;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    background-color: rgb(151, 142, 142);
+    padding: 30px;
+    width: 300px;
+    height: fit-content;
+    border-radius: 10px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.naming{
+    display: flex;
+    flex-direction: row;
+    width: 280px;
+}
+.idpass{
+    padding: 5px;
+    margin: 2px;
+    border-radius: 7px;
+    background-color: antiquewhite;
+    width: 280px;
+
+}
+button{
+    padding: 5px;
+    margin: 2px;
+    border-radius: 7px;
+    background-color: antiquewhite;
+    color: black;
+}
+#fname{
+    padding: 5px;
+    margin: 2px;
+    border-radius: 7px;
+    background-color: antiquewhite;
+    width: 130px;
+}
+#lname{
+    padding: 5px;
+    margin: 2px;
+    border-radius: 7px;
+    background-color: antiquewhite;
+    width: 130px;
+}
+button:hover{
+    background-color: rgb(246, 217, 179);
+}
