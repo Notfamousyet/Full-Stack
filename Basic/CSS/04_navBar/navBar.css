@@ -1,0 +1,113 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: black;
+    color:white;
+}
+.nav-container{
+    margin-bottom: 40px;
+}
+h2{
+    margin-bottom:10px;
+}
+.nav1{
+    background-color: antiquewhite;
+    padding: 10px;
+}
+.nav1 ul{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+}
+.nav1 a{
+    text-decoration: none;
+    color: black;
+    padding: 5px 15px;
+    position: relative;
+}
+.nav1 a::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: blue;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+.nav1 a:hover::after{
+    transform: scaleX(1);
+}
+.nav1 .login-btn{
+    background-color: blue;
+    color: aliceblue;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+.nav2{
+    background-color: antiquewhite;
+    width: 200px;
+    padding: 20px;
+}
+.nav2 ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav2 li{
+    margin-bottom: 12px;
+}
+.nav2 a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 10px;
+    width: 100%;
+}
+.nav2 a:hover{
+    background-color: rgb(245, 214, 174);
+}
+.nav2 .login-btn{
+    background-color: white;
+    color: rgb(47, 47, 47);
+    border: none;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+.nav2 .login-btn:hover{
+    background-color: rgb(199, 209, 219);
+}
+.nav3{
+    background-color: antiquewhite;
+    padding: 10px;
+
+}
+.nav3 ul{
+    list-style-type:none;
+    display: flex; 
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.nav3 a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    display: block;
+}
+.nav3 .dropdown-content{
+    display: none;
+}
+.nav3 .dropdown:hover .dropdown-content{
+    display: block;
+    position: absolute;
+    background-color: rgb(203, 201, 198);
+}
