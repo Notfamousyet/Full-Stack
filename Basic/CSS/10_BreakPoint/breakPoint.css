@@ -1,0 +1,27 @@
+body{
+    margin:0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+.responsive-div{
+    width:100%;
+    max-width: 1200px;
+    padding: 20px;
+    color: antiquewhite;
+    font-size: 20px ;
+    background-color: blueviolet;
+}
+@media(max-width:600px){
+    body{
+        align-items: flex-start;
+    }
+    .responsive-div{
+        background-color:blue;
+    }
+
+}

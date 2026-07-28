@@ -1,0 +1,28 @@
+/* Set a consistent height for carousel images */
+.carousel-item img {
+  height: 300px; /* Adjust this value to your preferred height */
+  object-fit: cover; /* Prevents image distortion */
+}
+/* Changes all text within the second card overlay to black */
+.card-dark-text .card-img-overlay,
+.card-dark-text .card-title,
+.card-dark-text .card-text,
+.card-dark-text small {
+  color: #000000 !important;
+}
+/* Custom Footer Styling */
+footer {
+  background-color: #212529; /* Dark background matching text-bg-dark */
+  color: #f8f9fa;
+}
+
+footer a {
+  color: #adb5bd;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
