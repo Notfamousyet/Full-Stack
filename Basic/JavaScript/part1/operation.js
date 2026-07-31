@@ -9,4 +9,28 @@ console.log(reminder);
 let expo=2**3;
 console.log(expo);
 
+/*
+increment decrement
+a++
+a--
+++a
+--a
+
+compare
+>=
+<=
+==
+!=
+
+logical
+&& => and
+|| => or
+!  => reverse
+
++=
+-=
+*=
+/=
+
+*/ 
 
