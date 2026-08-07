@@ -166,6 +166,19 @@ const calculateTotal=(price,quality)=>{
 let totalcost=calculateTotal(499,100);
 console.log(totalcost);
 
-function processteaorder(){
-    
+function maketea(typeoftea){
+    return `this is maketea :${typeoftea}`
 }
+function processteaorder(teafunction){
+    return teafunction("earl grey")
+}
+let order= processteaorder(maketea);
+console.log(order);
+
+function createteamaker(){
+    return function(teatype){
+        return `making ${teatype}`;
+    }
+}
+let teamaker=createteamaker();
+console.log(teamaker("green tea"));
