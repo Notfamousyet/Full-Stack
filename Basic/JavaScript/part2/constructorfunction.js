@@ -166,4 +166,4 @@ class Rectangle {
 }
 
 const rect = new Rectangle(10, 5);
-console.log(rect.area); // Output: 50
+console.log(rect.area);

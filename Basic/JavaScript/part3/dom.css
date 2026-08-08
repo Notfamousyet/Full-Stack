@@ -1,0 +1,13 @@
+body{
+    background-color: black;
+    color: #fff;
+    text-align: center;
+}
+.highlight{
+    background-color: yellow;
+    font-weight: bold;
+    color: black;  
+}
+.hidden{
+    display: none;
+}
