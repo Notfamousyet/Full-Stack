@@ -1,3 +1,4 @@
+// Promise is a special object that acts as a placeholder for the future result of an asynchronous operation
 function fetchData(){
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{

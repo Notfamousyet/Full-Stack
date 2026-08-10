@@ -20,6 +20,9 @@ function greeting(greets,punctuation){
 }
 greeting.call(user,"Hello","!");
 
+
+// apply 
+
 function greeting1(greets,punctuation){
     console.log(`${greets}, ${this.firstname}${punctuation}`);
 }
