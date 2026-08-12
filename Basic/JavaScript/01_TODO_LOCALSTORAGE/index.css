@@ -16,11 +16,47 @@ body{
     background-color: rgb(45, 42, 42);
     padding: 10px 50px 30px 50px;
 }
-#todo-input{
-    background-color: rgb(16, 16, 16);
-    border: none;
-    border-radius: 2px;
-    padding: 5px;
-    color: rgb(199, 185, 167);
+
+.input-container, ul {
+  width: 100%;
+  max-width: 320px; /* Adjust this to your desired overall width */
+  margin: 0 auto;   /* Centers them on the page */
+  box-sizing: border-box;
+  margin-bottom:  15px;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Individual list items */
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  
+  /* Match height & inner spacing of input row */
+  padding: 8px 12px; 
+  margin-top: 10px;
+  
+  background-color: #1a1a1a;
+  border-radius: 4px;
+}
+
+/* Fix text styling inside list item */
+li span {
+  color: #a0a0a0; /* Keeps text clearly visible against dark background */
+  font-size: 14px;
+}
+/* Apply line-through only to the text span */
+li.completed span {
+  text-decoration: line-through;
+  color: #888888; /* Optional: dims text when completed */
+}
+
+li.completed {
+  opacity: 0.7;
+}
