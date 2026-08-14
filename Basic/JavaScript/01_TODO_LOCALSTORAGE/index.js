@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             taskss.completed = !taskss.completed;
             li.classList.toggle('completed');
             saveTask(); 
-            renderTask(newTask)
+            renderTask(newTask);
             
         })
         li.querySelector('button').addEventListener('click',(e)=>{

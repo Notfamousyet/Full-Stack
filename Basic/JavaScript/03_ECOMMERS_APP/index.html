@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eshop</title>
+<link rel="stylesheet" href="index.css">
+<script src="index.js" defer></script>
+</head>
+<body>
+
+    <div class="outer-container">
+        <div class="heading">Products</div>
+        
+        <!-- PRODUCTS (Notice data-id and data-name on each card) -->
+        <div class="products-container">
+            <div class="product-card" data-id="p1" data-name="Product 1">
+              <div class="product-info">
+                <h3>Product 1 - $<span>29.99</span></h3>
+              </div>
+              <button type="button" class="action-btn">Add to Cart</button>
+            </div>
+            
+            <div class="product-card" data-id="p2" data-name="Product 2">
+              <div class="product-info">
+                <h3>Product 2 - $<span>19.99</span></h3>
+              </div>
+              <button type="button" class="action-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="p3" data-name="Product 3">
+              <div class="product-info">
+                <h3>Product 3 - $<span>49.99</span></h3>
+              </div>
+              <button type="button" class="action-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="text-holder">
+            <!-- CART LIST DISPLAY -->
+            <div class="cart-summary">
+                <h4>Cart Summary</h4>
+                <div id="cart-list" class="cart-list">
+                    <p class="empty-msg">No items added yet.</p>
+                </div>
+            </div>
+
+            <!-- CHECKOUT & TOTAL -->
+            <div class="checkout-section">
+                <p class="total-text">Total Amount: $<span id="total-price">0.00</span></p>
+                <button type="button" id="checkout-btn" class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- POPUP MODAL -->
+    <div id="popup-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="success-icon">&#10004;</div>
+            <h2>Order Placed!</h2>
+            <p id="modal-message">Your order has been successfully processed.</p>
+            <button id="close-popup-btn" class="modal-btn">OK</button>
+        </div>
+    </div>
+
+</body>
+</html>
