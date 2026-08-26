@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 8px;
+  width: 420px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.heading, h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+
+.SmallHeading, h3 {
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 12px;
+}
+
+#expense-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  width: 100%; /* Ensures the form stays within the container */
+}
+
+#expense-form input {
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+  min-width: 0; /* Prevents input fields from pushing outside the flexbox */
+}
+
+#expense-name {
+  flex: 2; /* Takes up 2 parts of available space */
+}
+
+#expense-amount {
+  flex: 1; /* Takes up 1 part of available space */
+}
+
+#add-expense-btn {
+  background-color: #7c3aed;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+  white-space: nowrap; /* Keeps button text on one line */
+  flex-shrink: 0; /* Prevents button from getting squished */
+}
+
+#add-expense-btn:hover {
+  background-color: #6d28d9;
+}
+
+/* Container for expense items */
+#expense-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 20px 0;
+}
+
+/* Individual expense list item */
+#expense-list li {
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+/* Delete button styling */
+#expense-list li button {
+  background-color: #dc2626; /* Red color for delete action */
+  color: #ffffff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+/* Delete button hover effect */
+#expense-list li button:hover {
+  background-color: #b91c1c;
+}

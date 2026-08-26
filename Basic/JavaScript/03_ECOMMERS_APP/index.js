@@ -1,93 +1,95 @@
-document.addEventListener('DOMContentLoaded', () => {
-  let cart = {}; // Object format: { 'p1': { name: 'Product 1', price: 29.99, count: 1 } }
-  let totalPrice = 0;
 
-  const totalPriceElement = document.getElementById('total-price');
-  const cartListElement = document.getElementById('cart-list');
-  const actionButtons = document.querySelectorAll('.action-btn');
-  const checkoutBtn = document.getElementById('checkout-btn');
+      document.addEventListener('DOMContentLoaded', () => {
+        let cart = {}; // Stores items as { 'p1': { name: 'Product 1', price: 29.99, count: 1 } }
+        let totalPrice = 0;
 
-  // Modal elements
-  const modal = document.getElementById('popup-modal');
-  const modalMessage = document.getElementById('modal-message');
-  const closeModalBtn = document.getElementById('close-popup-btn');
+        const totalPriceElement = document.getElementById('total-price');
+        const cartListElement = document.getElementById('cart-list');
+        const actionButtons = document.querySelectorAll('.action-btn');
+        const checkoutBtn = document.getElementById('checkout-btn');
 
-  // Function to render cart items list on screen
-  function updateCartUI() {
-    cartListElement.innerHTML = '';
+        const modal = document.getElementById('popup-modal');
+        const modalMessage = document.getElementById('modal-message');
+        const closeModalBtn = document.getElementById('close-popup-btn');
 
-    const itemKeys = Object.keys(cart);
-    if (itemKeys.length === 0) {
-      cartListElement.innerHTML = '<p class="empty-msg">No items added yet.</p>';
-      return;
-    }
+        // Function to render the cart list items on the page
+        function updateCartUI() {
+          cartListElement.innerHTML = '';
 
-    itemKeys.forEach((id) => {
-      const item = cart[id];
-      const itemRow = document.createElement('div');
-      itemRow.className = 'cart-item';
-      
-      // Exact format requested: Product Name ($Price) xCount
-      itemRow.innerHTML = `
-        <span class="item-details">${item.name} ($${item.price.toFixed(2)})</span>
-        <span class="cart-item-count">x${item.count}</span>
-      `;
-      cartListElement.appendChild(itemRow);
-    });
-  }
+          const itemKeys = Object.keys(cart);
+          if (itemKeys.length === 0) {
+            cartListElement.innerHTML = '<p class="empty-msg">No items added yet.</p>';
+            return;
+          }
 
-  // Handle "Add to Cart" button click
-  actionButtons.forEach((button) => {
-    button.addEventListener('click', (e) => {
-      const card = e.target.closest('.product-card');
-      const productId = card.dataset.id;
-      const productName = card.dataset.name;
-      const priceSpan = card.querySelector('.product-info span');
-      const price = parseFloat(priceSpan.textContent);
+          itemKeys.forEach((id) => {
+            const item = cart[id];
+            const itemRow = document.createElement('div');
+            itemRow.className = 'cart-item';
+            
+            // Format: Product 1 ($29.99) x1
+            itemRow.innerHTML = `
+              <span>${item.name} ($${item.price.toFixed(2)})</span>
+              <span class="cart-item-count">x${item.count}</span>
+            `;
+            cartListElement.appendChild(itemRow);
+          });
+        }
 
-      // Check if product is already added
-      if (cart[productId]) {
-        cart[productId].count += 1; // Just increment count
-      } else {
-        cart[productId] = {
-          name: productName,
-          price: price,
-          count: 1
-        };
-      }
+        // Add to Cart Button Click Handler
+        actionButtons.forEach((button) => {
+          button.addEventListener('click', (e) => {
+            const card = e.target.closest('.product-card');
+            
+            // Extract info from data attributes and span
+            const productId = card.getAttribute('data-id');
+            const productName = card.getAttribute('data-name');
+            const priceSpan = card.querySelector('.product-info span');
+            const price = parseFloat(priceSpan.textContent);
 
-      // Update total price and UI
-      totalPrice += price;
-      totalPriceElement.textContent = totalPrice.toFixed(2);
-      updateCartUI();
-    });
-  });
+            // Update item quantity if already in cart, else add new
+            if (cart[productId]) {
+              cart[productId].count += 1;
+            } else {
+              cart[productId] = {
+                name: productName,
+                price: price,
+                count: 1
+              };
+            }
 
-  // Handle Checkout Click
-  checkoutBtn.addEventListener('click', () => {
-    if (totalPrice === 0) {
-      modalMessage.textContent = 'Your cart is empty! Please add items before checking out.';
-    } else {
-      modalMessage.textContent = `Order Placed Successfully! Total paid: $${totalPrice.toFixed(2)}`;
+            // Update total and refresh cart UI
+            totalPrice += price;
+            totalPriceElement.textContent = totalPrice.toFixed(2);
+            updateCartUI();
+          });
+        });
 
-      // Reset cart data after order placement
-      cart = {};
-      totalPrice = 0;
-      totalPriceElement.textContent = '0.00';
-      updateCartUI();
-    }
+        // Checkout Button Click Handler
+        checkoutBtn.addEventListener('click', () => {
+          if (totalPrice === 0) {
+            modalMessage.textContent = 'Your cart is empty! Please add items before checking out.';
+          } else {
+            modalMessage.textContent = `Order Placed Successfully! Total paid: $${totalPrice.toFixed(2)}`;
 
-    modal.classList.remove('hidden');
-  });
+            // Clear cart
+            cart = {};
+            totalPrice = 0;
+            totalPriceElement.textContent = '0.00';
+            updateCartUI();
+          }
 
-  // Close popup modal
-  closeModalBtn.addEventListener('click', () => {
-    modal.classList.add('hidden');
-  });
+          modal.classList.remove('hidden');
+        });
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.add('hidden');
-    }
-  });
-});
+        // Close Pop-up Modal
+        closeModalBtn.addEventListener('click', () => {
+          modal.classList.add('hidden');
+        });
+
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.add('hidden');
+          }
+        });
+      });
