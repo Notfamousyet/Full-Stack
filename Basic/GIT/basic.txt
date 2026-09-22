@@ -67,3 +67,41 @@ git stash pop
 
 -- To directly add and commit 
 git commit -am "message to write"
+
+-- To rebase use command is given below even understand while using it that all hash will change then others not able to pull it using there hashs.Try not to do it on master branch.
+git rebase master
+
+-- If conflicts are there then make changes in file save then use this two commands.
+git add abc
+git rebase --continue
+
+-- To check added resourse 
+git remote -v 
+
+-- If have to add to origit
+git remote add origin https://githubabc.git
+
+-- To rename it abc is older and def is new and to remove
+git remote rename abc def
+git remote remove def
+
+-- To push it to origin and in master branch
+git push -u origin master
+
+-- To push after running upper thing then you can directly use 
+git push
+
+-- To install loccally use command
+git clone https://abc.com
+
+-- To get into but dont want to put in workspace
+git fetch
+
+-- To grt info and add it in your workspace (git pull= git fetch + git merge)
+git pull
+
+-- To want to update open source 
+1) go to fork add it then clone repository to you local.
+2) create new branch on origin then make changes as needed
+3) push it to orgin that branch you created
+4) go to github add description on pop up pull request if they agree then they will commit and merge.
