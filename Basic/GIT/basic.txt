@@ -1,0 +1,69 @@
+Git and Github are different.
+
+Git(software): The tool on your computer that saves your history.
+
+GitHub(service): The website where you store and share that history with others.
+
+Commit -> checkpoint
+
+In powershell
+
+-- To create multiple folder
+    mkdir git1,git2,git3  
+
+-- To initiate track go to that path and use used to create 
+    git init
+
+-- To check status of it.
+    git status
+
+-- To create File we use
+    ni git1.txt
+
+-- To save and exit click Esc and wrire :wq and changes occur 
+
+-- git add .
+(all files get added)
+
+-- To directly add message without code editor
+git commit -m "hello"
+
+-- To check logs (particular id and details)
+git log
+git log --oneline
+
+use ctrl + shift + P and type install command code in path
+
+-- In git there we can create a .gitignore file and whatever file or folder we mention in it git will not keep track of it.
+
+-- Each commit refers to previous hash commit and 1st one  to null.
+
+-- To know branching use
+git branch
+
+-- To create a new branch use keywords and add name to it. 
+git branch abc
+
+-- To switch branch and to create and switch. 
+git checkout abc
+git switch -c abc
+
+-- To merge any branch to main 
+git merge abc
+
+-- To delete any branch
+git branch -d abc
+
+-- To see difference between what previous and after. Here '-' and '+' are used to differentiate what changes are made.To quit only write :q
+git diff --staged
+
+-- To switch without commit and having and update so you can switch branch
+git stash
+
+-- To get those changes back use 
+git stash pop
+
+-- using stash command we can take back changes in different branches.
+
+-- To directly add and commit 
+git commit -am "message to write"
