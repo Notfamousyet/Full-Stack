@@ -1,0 +1,33 @@
+-- JavaScript is a programming language. It is the actual language/code you write to tell a computer what to do. Originally, it was created to run inside web browsers to make websites interactive (like handling button clicks, animations, and form popups).
+
+-- JavaScript is naturally a single-threaded language, meaning it can only execute one line of code at a time.
+
+-- Node.js is a runtime environment (an execution environment). It is a program built on Google Chrome's V8 engine that allows you to run JavaScript code outside of a web browser—most commonly on a server or desktop computer.
+
+-- require :- is a built-in function in Node.js used to import code from external modules or packages into your current file.
+
+-- fs stands for File System.It is a core built-in module in Node.js that allows your code to interact directly with files and directories on your computer's operating system.
+
+-- parseInt() is a built-in function that converts (parses) a string into a whole number (integer).
+
+-- process.argv :- is a built-in property (an array) that holds all the command-line arguments passed when you run a script from your terminal.
+node todo.js add "Buy Milk"
+[0]    [1]   [2]     [3] 
+
+-- 
+Synchronous (Sync)
+
+ Execution Flow: Sequential. Code runs strictly line-by-line.
+ Behavior: Blocking. The next line cannot run until the current one finishes.
+ Performance: Can freeze the UI if a task takes too long.
+ Common Use Cases: Simple calculations, array manipulations, and data formatting.
+
+---
+Asynchronous (Async)
+
+ Execution Flow: Concurrent. Heavy tasks are offloaded to run in the background.
+ Behavior: Non-blocking. The script keeps running while the task completes.
+ Performance: Keeps the UI responsive and highly performant.
+ Common Use Cases: Fetching data from an API, reading files, and timers.
+
+-- JSON.parse() is a built-in JavaScript function that takes a JSON string (text format) and converts it into a real JavaScript object or array.
