@@ -31,3 +31,25 @@ Asynchronous (Async)
  Common Use Cases: Fetching data from an API, reading files, and timers.
 
 -- JSON.parse() is a built-in JavaScript function that takes a JSON string (text format) and converts it into a real JavaScript object or array.
+
+-- nginx is (web server) an HTTP and reverse proxy server, mail proxy server and a generic TCP/UDP server.
+
+-- libuv litens to all request gather it and give us in object format.
+
+-- status code
+1) informational responses (100-199)
+2) successful responses (200-299)
+3) redirection messages (300-399)
+4) client error response (400-499)
+5) server error response (500-599)
+
+-- pm2 PM2 is a popular production process manager for Node.js applications.Usually helps in checking how much memory application consuming and how much is on server by default and many more.
+Here are the key feature headings for PM2:
+
+ Auto-Restart (Process Management)
+ Zero-Downtime Reloads
+ Cluster Mode (Load Balancing & CPU Scaling)
+ Log Management & Real-Time Monitoring
+ Startup Script & Auto-Boot Configuration
+
+-- In backend server talk to databse there is one extra layer in between them ORM( mongoose/prisma/drizzle) it helps to make easy to communicated with database.
