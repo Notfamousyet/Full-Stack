@@ -53,3 +53,27 @@ Here are the key feature headings for PM2:
  Startup Script & Auto-Boot Configuration
 
 -- In backend server talk to databse there is one extra layer in between them ORM( mongoose/prisma/drizzle) it helps to make easy to communicated with database.
+
+-- To create nodejs project use 
+npm init
+
+"scripts": {
+    "start": "node index.js"
+} in package.json 
+here if we run
+npm run start
+then by default it will run index.js file.
+
+-- nodemon is tool that help nodejs based application by automaticallly restarting node application when file changes in directory are detected.
+
+-- In dotenv secure files are stored and anyone needed any then have to ask for it.
+
+-- nestjs gives project structure. models :- how we keep data in database.
+
+-- If express want to talk to mongodb it will talk with help of mongoose library
+
+-- Express.js is basic backend tool for building web servers. Used when When you want a lightweight setup, complete freedom, or are building simple apps/APIs quickly.
+
+-- NestJS :- A strtured enterpris-ready backend framework built on top of Express. Used when working on large team projects or big company apps where you need standard rules and clean structure so code doesn't get messy.
+
+-- Next.js :- A full-stack framework built around React that handles both the user interface (frontend) and server logic (backend) in one package.
