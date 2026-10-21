@@ -77,3 +77,53 @@ then by default it will run index.js file.
 -- NestJS :- A strtured enterpris-ready backend framework built on top of Express. Used when working on large team projects or big company apps where you need standard rules and clean structure so code doesn't get messy.
 
 -- Next.js :- A full-stack framework built around React that handles both the user interface (frontend) and server logic (backend) in one package.
+
+-- app.use ->will be used as middle ware if any port and anything changed it will get used
+
+-- extended: true: This allows your server to accept richer, more complex types of data objects (like nested objects) inside the form submission, rather than just simple text.
+
+-- express.static(...): This tells Express to serve static files directly to anyone who asks for them.
+
+-- CORS stands for Cross-Origin Resource Sharing.The Problem CORS Solves
+By default, web browsers have a security rule called the Same-Origin Policy. This rule prevents a frontend website.telling your backend server:
+"Hey, it's safe! Allow requests coming from this specific frontend website or from anywhere."
+It adds special headers to your server's responses that give the browser permission to accept the data coming from a different origin.
+
+-- app.use(cors({
+    origin: process.env.CORS_ORIGIN?.split(",") || "http://localhost:3000"
+})) 
+This configuration sets a strict rule for who is allowed to talk to your backend server
+
+-- What is a Stack Trace?
+When an error happens in your code, JavaScript generates a long text trail called a "stack trace." This trail tells you the exact path of functions that were executed leading up to the error, including the file names and line numbers.
+
+-- Mongoose is a helper library (an ODM) that sits between your Node.js application and your MongoDB database.
+Think of it as a translator and a security guard for your database:
+1. Why do we need it?
+MongoDB by itself is a bit raw. While it stores data nicely in JSON-like documents, writing pure MongoDB code to talk to your database can get messy, repetitive, and prone to bad data being saved.
+Mongoose makes working with MongoDB much easier and cleaner by letting you write simpler JavaScript code.
+2. What does Mongoose do for you?
+Defines Schemas (Rules): It lets you set strict rules for what your data should look like. For example, you can tell Mongoose: "Every user must have an email, and the password must be at least 6 characters long."
+Automatic Validation: If someone tries to sign up without filling out a required field, Mongoose automatically stops them and throws an error before the bad data ever reaches your database.
+Cleaner Syntax: Instead of writing long blocks of code to query or save data, Mongoose gives you short, easy-to-read methods like User.find() or User.save().
+
+-- To use mongoDB atlas have to connect to website and we get connection string there add it in .env file and after that link add databse name and even add user and password to it also.
+
+-- next(err) is used to pass the caught error to Express's built-in error-handling middleware.
+
+-- Promise is an object representing the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+-- hook is just a trigger function that runs automatically at a specific moment in time.
+
+-- A JWT is a compact, secure string used for user authentication and authorization. Once a user logs in, the server gives them a JWT, and the user sends this token back with every subsequent request to prove they are logged in.
+The 3-Part Structure: A JWT consists of three parts separated by dots (.):
+1) Header: Specifies the algorithm used and the token type (JWT).
+2) Payload: Contains the actual data (like user ID or email) encoded in Base64.
+3) Signature: A cryptographic digital signature that ensures the token cannot be tampered with or faked.
+
+-- Tokens are of 2 types with data and without data.
+Access token 
+Refresh token 
+these both are type of with data.
+
+-- Mailtrap is an email delivery platform designed for developers and QA teams to test, send, and manage emails safely during the development and staging phases without accidentally spamming real users.
