@@ -127,3 +127,7 @@ Refresh token
 these both are type of with data.
 
 -- Mailtrap is an email delivery platform designed for developers and QA teams to test, send, and manage emails safely during the development and staging phases without accidentally spamming real users.
+
+-- AccessToken send to client but refresh token send to database
+
+-- middleware is a function that runs in between.

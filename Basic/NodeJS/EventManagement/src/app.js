@@ -1,6 +1,11 @@
 import express from "express"
 import cors from "cors"
+import cookieParser from "cookie-parser"
+
 const app=express()
+
+// cookie 
+app.use(cookieParser())
 
 // basic configuration
 app.use(express.json({limit:"16kb"}))
@@ -17,7 +22,9 @@ app.use(cors({
 
 // import routes
 import healthCheckRouter from "./routes/healthcheck.route.js"
+import authRouter from "./routes/auth.routes.js"
 app.use("/api/v1/healthcheck",healthCheckRouter)
+app.use("/api/v1/auth",authRouter)
 
 app.get("/",(req,res)=>{
     res.send("Welcome to basecamp")
