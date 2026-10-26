@@ -131,3 +131,173 @@ these both are type of with data.
 -- AccessToken send to client but refresh token send to database
 
 -- middleware is a function that runs in between.
+
+-- note.models.js: Saves the notes you write.
+project.models.js: Stores information about your projects.
+projectmember.models.js: Keeps track of who is working on a project and what their role is.
+subtask.models.js: Holds smaller checklist items that belong to a main task.
+task.models.js: Saves the individual to-do items for a project.
+user.models.js: Stores account details for logging in and user profiles.
+
+-- grouping in mongodb query
+$count -> to count given fields
+$avg -> average based on id is null or group 
+$sum -> whatever digit you write in front of it will be added to count.
+count -> if you write 1 then ascending order things will be there if -1 then in decending order
+$limit -> whatever number in front of limit will be the limit of things
+$unwind -> array spliting 
+$project -> It shapes and customizes what your data looks like before passing it to the next step.
+$push -> push whatever field written with it.
+$all ->  operator in MongoDB selects documents where an array field contains all of the specified elements, regardless of their order.
+$lookup -> used to join data from two different collections—similar to a JOIN in SQL.
+ex:-
+  {
+    "$group": {
+      "_id": null,
+      "averageAge": { "$avg": "$age" }
+    }
+  }
+  -----------------
+  {
+  	$group: {
+  	  _id: "$favoriteFruit",
+  	  count:{
+        $sum:1
+      }
+  	}
+	},
+  {
+    $sort: {
+      count: -1
+    }
+  },
+  {
+    $limit: 2
+  }
+  ------------------
+  {
+    	$group: {
+  	  _id: "$company.location.country",
+      count:{
+        $sum:1
+      }
+  	}
+	},
+  {
+    $sort: {
+      count:-1
+    }
+  },
+  {
+  	$limit: 1  
+  }
+  -------------------
+    {
+  	$unwind: "$tags"
+	},
+  {
+    $group: {
+      _id: "$_id",
+      numberOfTages:{$sum:1}
+    }
+  },
+  {
+    $group: {
+  		_id:"null",
+			averageTags:{$avg:"$numberOfTages"}
+    }
+  }
+  ----------------------
+    {
+    $addFields: {
+      NumberOfTags:{
+        $size:{$ifNull:["$tags",[]]}
+      }
+    }
+  },
+  {
+    $group: {
+      _id: "null",
+			AverageNumberOfTags:{$avg:"$NumberOfTags"}
+    }
+  }
+  ----------------------
+    {
+    $match: {
+      tags:"enim"
+    }
+  },
+  {
+    $count: 'EnimTags'
+  }
+  ---------------------
+  {
+    $match: {
+			isActive:false,tags:"velit"
+    }
+  },
+  {
+    $project: {
+      name:1,age:1
+    }
+  }
+  ---------------------
+  {
+    $match: {
+      "company.phone": /^\+1 \(940\)/
+    }
+  },
+  {
+    $count: 'usersWithSpecialPhoneNumber'
+  }
+  ---------------------------
+  {
+    $sort: {
+      registered: -1
+    }
+  },
+  {
+    $project: {
+      name:1,
+      registered:1,
+      age:1
+    }
+  }
+  -------------------------
+  {
+    $group: {
+      _id: "$favoriteFruit",
+			userList:{$push:"$name"}
+    }
+  }
+  -----------------------
+    {
+    $match: {
+      "tags.1":"ad"
+    }
+  },
+  {
+    $count: 'SecondfTagAd'
+  }
+  ----------------------
+  {
+    $match: {
+      tags:{$all:["enim","id"]}
+    }
+  }
+  -----------------------
+  {
+    $lookup: {
+      from: "authors",
+      localField: "author_id",
+      foreignField: "_id",
+      as: "AuthorDetails"
+    }
+  },
+  {
+    $addFields: {
+      AuthorDetails: {
+        $arrayElemAt:["$AuthorDetails",0]
+      }
+    }
+  }
