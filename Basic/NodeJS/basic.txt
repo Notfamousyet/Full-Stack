@@ -301,3 +301,5 @@ ex:-
       }
     }
   }
+
+-- Express handles tasks with file attachments by using Multer as a third-party middleware.
