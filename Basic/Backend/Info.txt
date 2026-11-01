@@ -1,0 +1,8 @@
+-- Express.js =>(Express.js is a lightweight framework built on top of Node.js.)Express.js is a lightweight tool for Node.js that makes building web servers and APIs fast and easy.
+    1)Route traffic: Direct users to different URLs (like /instagram or /login).
+    2)Handle data: Easily read incoming requests from users and send back responses (like JSON data or error messages).
+    3)Manage logic: Set up authentication, authorization, and validation rules in standard JavaScript.
+
+-- Node.js is a backend (server-side) runtime environment. It allows you to run JavaScript outside of the browser to build server applications, connect to databases, handle business logic, and manage network traffic.
+
+-- React.js is a frontend (client-side) library. It runs inside the user's web browser to build interactive user interfaces, components, and single-page applications.
