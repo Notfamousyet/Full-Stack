@@ -6,3 +6,11 @@
 -- Node.js is a backend (server-side) runtime environment. It allows you to run JavaScript outside of the browser to build server applications, connect to databases, handle business logic, and manage network traffic.
 
 -- React.js is a frontend (client-side) library. It runs inside the user's web browser to build interactive user interfaces, components, and single-page applications.
+
+-- slice() (which creates a new copy), splice() directly modifies the original array.
+
+-- Use find() when you want to retrieve the actual data item so you can read or modify its properties (like updating a tea's name or price).
+Use findIndex() when you need to know where the item is located in the array, which is often required if you want to remove it using splice() or update it by its index reference.
+
+-- Use Morgan to track incoming web requests.
+Use Winston to track general app activity, warnings, and errors.
