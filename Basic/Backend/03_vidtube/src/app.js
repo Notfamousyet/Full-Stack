@@ -1,5 +1,6 @@
 import express from 'express'
 import cors from "cors"
+import cookieParser from "cookie-parser"
 
 const app=express()
 app.use(
@@ -13,12 +14,15 @@ app.use(
 app.use(express.json({limit:"16kb"}))
 app.use(express.urlencoded({extended:true,limit:"16kb"}))
 app.use(express.static("public"))
+app.use(cookieParser())
 
 // import routes
 import healthcheck  from './controllers/healthcheck.controllers.js'
+import userRouter from "./routes/user.routes.js"
 
 // routes
 app.use("/api/v1/heathcheck",healthcheck)
+app.use("/api/v1/users",userRouter)
 
 
 

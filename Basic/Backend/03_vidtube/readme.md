@@ -35,3 +35,7 @@ It will be used to limit hoe much data to load
 "npm i bcrypt"
 and add method in models
 15) Install "npm i jsonwebtoken" to create RefreshTokens and all
+16) Install cookie parser and multer(middleware for handling form-data which is primarily used for uploading files)
+"npm i cookie-parser"
+"npm i multer"
+17) Create controller route and all things for models
