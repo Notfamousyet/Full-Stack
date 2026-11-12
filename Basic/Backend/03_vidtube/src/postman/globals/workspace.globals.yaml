@@ -1,0 +1,5 @@
+name: Globals
+values:
+  - key: vidtube
+    value: ''
+    enabled: true
